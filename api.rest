@@ -4,7 +4,7 @@ GET http://localhost:3000/product
 
 ######
 ## OBTENER PRODUCTO POR ID, SE ESPERA PRODUCT
-GET http://localhost:3000/product/5e79198afa71545730247bcf
+GET http://localhost:3000/product/5e791d5afa71545730247bd2
 
 ######
 ## CREAR PROUDUCTO, SE ESPERA PRODUCT
@@ -12,9 +12,9 @@ POST http://localhost:3000/product
 Content-Type: application/json
 
 {
-  "name": "pera",
+  "name": "uvas",
   "description": "Este es una fruta",
-  "price": 4
+  "price": 5
 }
 ######
 ## EDITAR PRODUCTO, SE ESPERA PRODUCTO
@@ -22,10 +22,10 @@ PUT http://localhost:3000/product
 Content-Type: application/json
 
 {
-    "price": 1,
-    "id": "5e7919c9fa71545730247bd1"
-  }
+  "id": "5e791d5afa71545730247bd2",
+  "name": "melon"
+}
 
 ######
 ## ELIMINAR PRODUCTO POR ID, SE ESPERA PRODUCTO
-DELETE http://localhost:3000/product/5e7919bffa71545730247bd0
+DELETE http://localhost:3000/product/5e791d5afa71545730247bd2
