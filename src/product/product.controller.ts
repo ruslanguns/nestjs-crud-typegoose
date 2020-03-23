@@ -4,9 +4,9 @@ import { Product } from './product.model';
 
 class CreateProductDto {
     id?: string;
-    name: string;
-    description: string;
-    price: number;
+    name?: string;
+    description?: string;
+    price?: number;
 }
 
 @Controller('product')
@@ -17,7 +17,7 @@ export class ProductController {
 
     @Get()
     async getProducts(): Promise<Product[]> {
-        return this.productService.findAllAsync();
+        return await this.productService.findAllAsync();
     }
 
     @Get(':productId')

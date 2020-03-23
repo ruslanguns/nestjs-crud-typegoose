@@ -3,11 +3,11 @@ import { prop } from '@typegoose/typegoose';
 export class Product extends BaseModel {
 
     @prop()
-    name: string;
+    name?: string;
 
     @prop()
-    description: string;
+    description?: string;
 
     @prop()
-    price: number;
+    price?: number;
 }
