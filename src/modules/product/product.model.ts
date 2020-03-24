@@ -1,4 +1,4 @@
-import { BaseModel } from '../core/database/base.model';
+import { BaseModel } from '../../core/abstracts';
 import { prop } from '@typegoose/typegoose';
 export class Product extends BaseModel {
 

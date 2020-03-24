@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { BaseService } from '../core/database/base.service';
-import { Product } from './product.model';
 import { InjectModel } from '@nestjs/mongoose';
 import { ReturnModelType } from '@typegoose/typegoose';
+import { BaseService } from '../../core/abstracts';
+import { Product } from './product.model';
 
 @Injectable()
 export class ProductService extends BaseService<Product> {

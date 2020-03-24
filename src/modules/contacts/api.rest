@@ -1,0 +1,39 @@
+
+##### get contacts
+GET http://localhost:3000/contacts HTTP/1.1
+
+
+##### get contacts[]
+GET http://localhost:3000/contacts HTTP/1.1
+
+
+##### get contacts
+POST http://localhost:3000/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "christi",
+  "lastname": "salas"
+}
+
+
+##### get contact by ID
+GET http://localhost:3000/contacts/5e7a2d1718asdadadaaad22755fdcebf678 HTTP/1.1
+
+
+##### modify contact by id
+PUT http://localhost:3000/contacts HTTP/1.1
+Content-Type:  application/json
+
+{
+  "id": "5e7a2e728ee80e39a0f529c2",
+  "name": "christian"
+}
+
+##### DELETE contact by ID
+DELETE http://localhost:3000/contacts/5e7a2e828ee80e39a0f529c3 HTTP/1.1
+##### 
+
+##### Count Elements in contact
+GET http://localhost:3000/contacts/count HTTP/1.1
+##### 

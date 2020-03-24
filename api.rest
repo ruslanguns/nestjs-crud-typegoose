@@ -4,7 +4,7 @@ GET http://localhost:3000/product
 
 ######
 ## OBTENER PRODUCTO POR ID, SE ESPERA PRODUCT
-GET http://localhost:3000/product/5e791d5afa71545730247bd2
+GET http://localhost:3000/product/5e7919c9fa71545730247bd1
 
 ######
 ## CREAR PROUDUCTO, SE ESPERA PRODUCT
@@ -22,10 +22,33 @@ PUT http://localhost:3000/product
 Content-Type: application/json
 
 {
-  "id": "5e791d5afa71545730247bd2",
-  "name": "melon"
+  "id": "5e79ef788505665c741c2d39",
+  "name": "narajas"
 }
 
 ######
 ## ELIMINAR PRODUCTO POR ID, SE ESPERA PRODUCTO
-DELETE http://localhost:3000/product/5e791d5afa71545730247bd2
+DELETE http://localhost:3000/product/5e79efa58505665c741c2d3a
+
+
+
+###### TODO!
+## OBTENER TODO SE ESPERA PRODUCT [...]
+GET http://localhost:3000/todo
+######
+## CREAR PROUDUCTO, SE ESPERA PRODUCT
+POST http://localhost:3000/todo
+Content-Type: application/json
+
+{
+  "description": "Crear cruds en la app"
+}
+######
+## CREAR PROUDUCTO, SE ESPERA PRODUCT
+PUT http://localhost:3000/todo
+Content-Type: application/json
+
+{
+  "id": "5e7a284918d7b84614629ed8",
+  "status": false
+}
