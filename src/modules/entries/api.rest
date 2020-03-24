@@ -6,9 +6,6 @@ GET http://localhost:3000/entries HTTP/1.1
 POST http://localhost:3000/entries HTTP/1.1
 Content-Type: application/json
 
-{
-  "income": 100
-}
 
 ####
 
@@ -20,7 +17,7 @@ GET http://localhost:3000/entries/5e7a3e648fa9855f20a548dc HTTP/1.1
 
 #####
 
-DELETE  http://localhost:3000/entries/5e7a3e808fa9855f20a548de HTTP/1.1
+DELETE  http://localhost:3000/entries/5e7a3e6e8fa9855f20a548dd HTTP/1.1
 
 #####
 
@@ -32,3 +29,6 @@ Content-Type: application/json
   "income": 1900
 }
 #####
+
+POST http://localhost:3000/entries/test HTTP/1.1
+Content-Type: application/json

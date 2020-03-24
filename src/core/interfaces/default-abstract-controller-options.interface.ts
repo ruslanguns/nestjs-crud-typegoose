@@ -1,8 +1,7 @@
 export interface DefaultAbstractControllerOptions {
-    find?: boolean;
-    findById?: boolean;
+    findAllAsync?: boolean;
+    findByIdAsync?: boolean;
     create?: boolean;
-    delete?: boolean;
-    update?: boolean;
-    count?: boolean;
+    deleteByIdAsync?: boolean;
+    updateAsync?: boolean;
 }

@@ -1,10 +1,6 @@
-import { DefaultAbstractControllerOptions } from './default-abstract-controller-options.interface';
 
-export interface AbstractControllerOptions<T> {
-    model: { new(doc?: any): T };
-}
-
-export interface AbstractControllerDefautOptions<T>
-    extends AbstractControllerOptions<T> {
-    auth: DefaultAbstractControllerOptions | boolean;
+export interface AbstractControllerOptions<T, C, E> {
+    model: { new(doc?: any): T },
+    createDto: { new(): C },
+    editDto: { new(): E },
 }

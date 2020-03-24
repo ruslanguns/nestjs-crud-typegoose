@@ -5,19 +5,16 @@ import { MongoError } from 'mongodb';
 import { DocumentQuery, Types, Query } from 'mongoose';
 import { BaseModel } from '../models/base.model';
 
-type QueryList<T extends BaseModel> = DocumentQuery<
-    Array<DocumentType<T>>,
-    DocumentType<T>
->;
-type QueryItem<T extends BaseModel> = DocumentQuery<
-    DocumentType<T>,
-    DocumentType<T>
->;
+type QueryList<T extends BaseModel> = DocumentQuery<Array<DocumentType<T>>, DocumentType<T>>;
+type QueryItem<T extends BaseModel> = DocumentQuery<DocumentType<T>, DocumentType<T>>;
 
-export abstract class BaseService<T extends BaseModel> {
+export abstract class BaseService<T extends BaseModel, C, E> {
     protected model: ReturnModelType<AnyParamConstructor<T>>;
+    // protected dtos: { create: any, edit: any };
 
-    protected constructor(model: ReturnModelType<AnyParamConstructor<T>>) {
+    protected constructor(
+        model: ReturnModelType<AnyParamConstructor<T>>
+    ) {
         this.model = model;
     }
 
@@ -73,7 +70,7 @@ export abstract class BaseService<T extends BaseModel> {
         }
     }
 
-    async create(item: T): Promise<DocumentType<T>> {
+    async create(item: C): Promise<DocumentType<T>> {
         try {
             return await this.model.create(item);
         } catch (e) {
@@ -115,9 +112,10 @@ export abstract class BaseService<T extends BaseModel> {
         );
     }
 
-    async updateAsync(item: T): Promise<DocumentType<T>> {
+    async updateAsync(item: E): Promise<DocumentType<T>> {
         try {
-            return await this.update(item).exec();
+            const editDto = new this.model(item);
+            return await this.update(editDto).exec();
         } catch (e) {
             BaseService.throwMongoError(e);
         }
